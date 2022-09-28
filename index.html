@@ -4,43 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Puppies - HTML</title>
+    <script>
+        var Body = {
+            setColor: function(color){
+                document.querySelector('body').style.color = color;
+            },
+            setBackgroundColor: function(color){
+                document.querySelector('body').style.backgroundColor = color;
+            }
+        }
+        var Links = {
+            setColor: function(color){
+                var alist = document.querySelectorAll('a');
+                var i = 0;
+                while(i < alist.length) {
+                    alist[i].style.color = color;
+                    i = i + 1;
+                }
+            }
+        }
+      
+        function nightDayHandler(self){
+        var target = document.querySelector('body');
+        if(self.value === 'night'){
+        Body.setBackgroundColor('black');       
+        Body.setColor('white');
+        self.value = 'day';
+        
+        Links.setColor('powderblue');
+
+        } else {
+        Body.setBackgroundColor('white');
+        Body.setColor('black');
+        self.value = 'night';
+        
+        Links.setColor('blue');
+        }
+    }
+    </script>
 </head>
-<style>
-a {
-    color: red;
-    }    
-    </style>
-<body>
-    <!DOCTYPE html>
-    <html>
-    <head>
-    <title>WEB1 - HTML </title>
-    <meta charset="utf-8">
-    </head>
     <body>
+       
+    <link rel="stylesheet" href="style.css"/>
     <h1><a href="index.html">Top 10 Cutest Dog In The World 2022</a></h1>
+    <div id="grid">
     <ol>
     <li><a href="1.html">Yorkshire Terrier</a></li>
     <li><a href="2.html">Bichon Frise</a></li>
     <li><a href="3.html">Shih Tzu</a></li>
     <li><a href="4.html">Pekingese</a></li>
     </ol>
+    <div id="article">
     <h2>Cutiest Dog In the World 2022</h2>
     <p><a href="https://www.dogsloversblog.com/cutest-dog-in-the-world-2022/", target="_blank" ,
         title="HTML5 specification">You can see the all list of 10 cutest dog in the world 2022.</a><br>
         All dogs are cute, but we took some of the <strong>most popular</strong>
         choices out there to develop this list of the <u>top 10 cutest dog</u> in the world 2022.</p>
-    <img src="Long-Hair-Chihuahua.png" width="50%">
+    <img src="Long-Hair-Chihuahua.png" width="50%"><br>
+    <input type="button" value="night" onclick="nightDayHandler(this)">
     <p style="margin-top: 40px;">
     Dogs are great companions. Not only for human beings but for other animals as well. They are loyal, loving, and protective.<br>
     The adorable doggy is also a symbol of peace, friendship, and love.<br>
     There are a lot of dog breeds that have their own unique characteristics.<br>
     But, when it comes to cuteness, the Labrador Retriever wins the race.<br>
     Cuteness is in the eye of the beholder.</p>
+</div>
+</div>
     </body>
     </html>
-    </body>
-    </html>    
-</body>
-</html>
